@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ShreeGovardhanTextilesSystem.Pages"
-      xmlns:Pages="clr-namespace:UIKitTutorials.Pages" x:Class="ShreeGovardhanTextilesSystem.Pages.PurchasesPage"
+      xmlns:Pages="clr-namespace:ShreeGovardhanTextilesSystem.Pages" x:Class="ShreeGovardhanTextilesSystem.Pages.PurchasesPage"
       mc:Ignorable="d" 
       d:DesignHeight="4005" d:DesignWidth="5000"
       Title="PurchasesPage">
@@ -67,104 +67,104 @@
     </Page.Resources>
 
     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
-
-        <StackPanel HorizontalAlignment="Left" Width="Auto">
-
-
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <StackPanel HorizontalAlignment="Left" Width="Auto">
 
 
 
-            <StackPanel HorizontalAlignment="Left" Width="1776" Margin="0 0 0 0">
-                <Label Style="{StaticResource heading}" Content="Purchases Page"   HorizontalContentAlignment="Center" FontWeight="Bold" FontFamily="Bell MT" FontStyle="Italic" FontSize="36" />
-                <StackPanel Orientation="Horizontal" Width="1762">
 
 
-                    <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center"><Run Text="Date."/></TextBlock>
-                    <DatePicker Margin="-4,10,10,10" Name="todaydate" VerticalAlignment="Center"  TabIndex="1" FontSize="20"  Width="250"  />
+                <StackPanel HorizontalAlignment="Left" Width="1776" Margin="0 0 0 0">
+                    <Label Style="{StaticResource heading}" Content="Purchases Page"   HorizontalContentAlignment="Center" FontWeight="Bold" FontFamily="Bell MT" FontStyle="Italic" FontSize="36" />
+                    <StackPanel Orientation="Horizontal" Width="1762">
 
 
-                    <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center"><Run Text="Serial No."/></TextBlock>
-                    <TextBox x:Name="btnLastNamsse" TextChanged="btnLastName_TextChanged" TabIndex="2" />
+                        <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center"><Run Text="Date."/></TextBlock>
+                        <DatePicker Margin="-4,10,10,10" Name="todaydate" VerticalAlignment="Center"  TabIndex="1" FontSize="20"  Width="250"  />
 
-                    <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center"><Run Text="Weight."/></TextBlock>
-                    <TextBox x:Name="btnLastNamsseh" TextChanged="btnLastName_TextChanged" TabIndex="3" />
 
-                    <Grid HorizontalAlignment="Right" Margin="100 40 0 0">
+                        <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center"><Run Text="Serial No."/></TextBlock>
+                        <TextBox x:Name="btnLastNamsse" TextChanged="btnLastName_TextChanged" TabIndex="2" />
 
-                        <TextBlock x:Name = "textBlock" HorizontalAlignment = "Left"  
+                        <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center"><Run Text="Weight."/></TextBlock>
+                        <TextBox x:Name="btnLastNamsseh" TextChanged="btnLastName_TextChanged" TabIndex="3" />
+
+                        <Grid HorizontalAlignment="Right" Margin="100 40 0 0">
+
+                            <TextBlock x:Name = "textBlock" HorizontalAlignment = "Left"  
          Margin = "0 0 0 0" TextWrapping = "Wrap" Text = "Yarn type :"
          VerticalAlignment = "Top"  FontSize="23" />
 
-                        <RadioButton x:Name = "rb1" Content = "32" HorizontalAlignment = "Left"  
+                            <RadioButton x:Name = "rb1" Content = "32" HorizontalAlignment = "Left"  
          Margin = "125,0,0,0"
          GroupName = "Gender" Width = "69" FontSize="20" Checked = "HandleCheck" />
 
-                        <RadioButton x:Name = "rb2" Content = "40" HorizontalAlignment = "Left"  
+                            <RadioButton x:Name = "rb2" Content = "40" HorizontalAlignment = "Left"  
          Margin = "201,0,0,0"  FontSize="20"
          GroupName = "Gender" Width = "81" Checked = "HandleCheck" />
 
-                        <TextBlock x:Name = "textBlock2" HorizontalAlignment = "Left"  
+                            <TextBlock x:Name = "textBlock2" HorizontalAlignment = "Left"  
       TextWrapping = "Wrap"  Margin="30 40 0 0" Foreground="red"
          VerticalAlignment = "Top" FontSize="25"/>
 
-                    </Grid>
-                </StackPanel>
+                        </Grid>
+                    </StackPanel>
 
-                <Button Width="120" TabIndex="4" >
-                    <StackPanel VerticalAlignment="Center" 
+                    <Button Width="120" TabIndex="4" >
+                        <StackPanel VerticalAlignment="Center" 
                     HorizontalAlignment="Center" Orientation="Horizontal" 
                     Background="Transparent" Height="35" >
-                        <Viewbox Margin="0 3" >
-                            <Path Fill="Blue" 
+                            <Viewbox Margin="0 3" >
+                                <Path Fill="Blue" 
                       VerticalAlignment="Center" HorizontalAlignment="Center" 
                       Data="M16,10H14V7H10V10H8L12,14M19,15H15A3,3 0 0,1 12,18A3,3 0 0,1 9,15H5V5H19M19,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z"/>
-                        </Viewbox>
-                        <Label Content="Save" VerticalAlignment="Center" 
+                            </Viewbox>
+                            <Label Content="Save" VerticalAlignment="Center" 
                    HorizontalAlignment="Center" VerticalContentAlignment="Center" 
                    HorizontalContentAlignment="Center" Margin="2 1" Padding="5" 
                    Foreground="Blue" FontSize="15" FontWeight="Bold"/>
-                    </StackPanel>
-                </Button>
+                        </StackPanel>
+                    </Button>
 
+                </StackPanel>
+                <StackPanel  Width="1776" Margin="0 0 0 0">
+                    <DataGrid Height="600" HorizontalAlignment="Left" Width="1284" Margin="30" d:ItemsSource="{d:SampleData ItemCount=5}"></DataGrid>
+                    <Grid HorizontalAlignment="Right" >
+                        <StackPanel Height="330" Background="#C5FAD5" Margin="30,-930,30,0" Width="400">
+                            <Label Style="{StaticResource normal}" Content="Stocks"   HorizontalContentAlignment="Center" FontWeight="Bold" FontStyle="Italic" FontSize="30" Background="#AA96DA" />
+                            <Label Style="{StaticResource normal}"  Margin="10 10 10 10" Content="Quality : 32/36"   HorizontalContentAlignment="Center" FontSize="25" FontFamily="Perpetua Titling MT"  />
+                            <Border Width="2" Height="180" Margin="0 20 0 0" Background="#FFFD9D9D"/>
+                            <Grid Margin="5,-160,6,0" >
+                                <Label Style="{StaticResource normal}"    Content="Box" HorizontalContentAlignment="Left" FontSize="20" FontFamily="Perpetua Titling MT" Margin="65,0,19,0"  />
+                                <Label Style="{StaticResource normal}"  Content="Weight"   HorizontalContentAlignment="Right" FontSize="20" FontFamily="Perpetua Titling MT" Margin="0,0,37,0"  />
+
+                                <Label Style="{StaticResource normal}"    Content="07" FontWeight="Bold" HorizontalContentAlignment="Left" FontSize="23" FontFamily="Perpetua Titling MT" Margin="67,62,19,0" Foreground="#FFDE1212"  />
+                                <Label Style="{StaticResource normal}"  Content="367.54"  FontWeight="Bold"   HorizontalContentAlignment="Right" FontSize="23" FontFamily="Perpetua Titling MT" Margin="0,62,37,0" Foreground="#FFDE1212"  />
+
+
+                            </Grid>
+                        </StackPanel>
+
+                        <StackPanel Height="300" Background="#FFFFD2" Margin="30,-299,30,0" Width="400">
+                            <Label Style="{StaticResource normal}"  Margin="10 10 10 10" Content="Quality : 40/24"   HorizontalContentAlignment="Center" FontSize="25" FontFamily="Perpetua Titling MT"  />
+                            <Border Width="2" Height="180" Margin="0 20 0 0" Background="#FFFD9D9D"/>
+                            <Grid Margin="5,-160,6,0" >
+                                <Label Style="{StaticResource normal}"    Content="Box" HorizontalContentAlignment="Left" FontSize="20" FontFamily="Perpetua Titling MT" Margin="65,0,19,0"  />
+                                <Label Style="{StaticResource normal}"  Content="Weight"   HorizontalContentAlignment="Right" FontSize="20" FontFamily="Perpetua Titling MT" Margin="0,0,37,0"  />
+
+                                <Label Style="{StaticResource normal}"    Content="07" FontWeight="Bold" HorizontalContentAlignment="Left" FontSize="23" FontFamily="Perpetua Titling MT" Margin="67,62,19,0" Foreground="#FFDE1212"  />
+                                <Label Style="{StaticResource normal}"  Content="367.54"  FontWeight="Bold"   HorizontalContentAlignment="Right" FontSize="23" FontFamily="Perpetua Titling MT" Margin="0,62,37,0" Foreground="#FFDE1212"  />
+
+
+                            </Grid>
+                        </StackPanel>
+
+                    </Grid>
+
+
+
+                </StackPanel>
             </StackPanel>
-            <StackPanel  Width="1776" Margin="0 0 0 0">
-                <DataGrid Height="600" HorizontalAlignment="Left" Width="1284" Margin="30" d:ItemsSource="{d:SampleData ItemCount=5}"></DataGrid>
-                <Grid HorizontalAlignment="Right" >
-                    <StackPanel Height="330" Background="#C5FAD5" Margin="30,-930,30,0" Width="400">
-                        <Label Style="{StaticResource normal}" Content="Stocks"   HorizontalContentAlignment="Center" FontWeight="Bold" FontStyle="Italic" FontSize="30" Background="#AA96DA" />
-                        <Label Style="{StaticResource normal}"  Margin="10 10 10 10" Content="Quality : 32/36"   HorizontalContentAlignment="Center" FontSize="25" FontFamily="Perpetua Titling MT"  />
-                        <Border Width="2" Height="180" Margin="0 20 0 0" Background="#FFFD9D9D"/>
-                        <Grid Margin="5,-160,6,0" >
-                            <Label Style="{StaticResource normal}"    Content="Box" HorizontalContentAlignment="Left" FontSize="20" FontFamily="Perpetua Titling MT" Margin="65,0,19,0"  />
-                            <Label Style="{StaticResource normal}"  Content="Weight"   HorizontalContentAlignment="Right" FontSize="20" FontFamily="Perpetua Titling MT" Margin="0,0,37,0"  />
-
-                            <Label Style="{StaticResource normal}"    Content="07" FontWeight="Bold" HorizontalContentAlignment="Left" FontSize="23" FontFamily="Perpetua Titling MT" Margin="67,62,19,0" Foreground="#FFDE1212"  />
-                            <Label Style="{StaticResource normal}"  Content="367.54"  FontWeight="Bold"   HorizontalContentAlignment="Right" FontSize="23" FontFamily="Perpetua Titling MT" Margin="0,62,37,0" Foreground="#FFDE1212"  />
-
-
-                        </Grid>
-                    </StackPanel>
-
-                    <StackPanel Height="300" Background="#FFFFD2" Margin="30,-299,30,0" Width="400">
-                        <Label Style="{StaticResource normal}"  Margin="10 10 10 10" Content="Quality : 40/24"   HorizontalContentAlignment="Center" FontSize="25" FontFamily="Perpetua Titling MT"  />
-                        <Border Width="2" Height="180" Margin="0 20 0 0" Background="#FFFD9D9D"/>
-                        <Grid Margin="5,-160,6,0" >
-                            <Label Style="{StaticResource normal}"    Content="Box" HorizontalContentAlignment="Left" FontSize="20" FontFamily="Perpetua Titling MT" Margin="65,0,19,0"  />
-                            <Label Style="{StaticResource normal}"  Content="Weight"   HorizontalContentAlignment="Right" FontSize="20" FontFamily="Perpetua Titling MT" Margin="0,0,37,0"  />
-
-                            <Label Style="{StaticResource normal}"    Content="07" FontWeight="Bold" HorizontalContentAlignment="Left" FontSize="23" FontFamily="Perpetua Titling MT" Margin="67,62,19,0" Foreground="#FFDE1212"  />
-                            <Label Style="{StaticResource normal}"  Content="367.54"  FontWeight="Bold"   HorizontalContentAlignment="Right" FontSize="23" FontFamily="Perpetua Titling MT" Margin="0,62,37,0" Foreground="#FFDE1212"  />
-
-
-                        </Grid>
-                    </StackPanel>
-
-                </Grid>
-               
-               
-
-            </StackPanel>
-        </StackPanel>
-
+        </ScrollViewer>
     </Border>
 </Page>
