@@ -24,5 +24,10 @@ namespace ShreeGovardhanTextilesSystem.Pages
         {
             InitializeComponent();
         }
+
+        private void DatePicker_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+
+        }
     }
 }

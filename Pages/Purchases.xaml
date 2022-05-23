@@ -80,7 +80,8 @@
 
 
                     <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center"><Run Text="Date."/></TextBlock>
-                    <TextBox x:Name="todaydate" TabIndex="1" />
+                    <DatePicker Margin="-4,10,10,10" Name="todaydate" VerticalAlignment="Center"  TabIndex="1" FontSize="20"  Width="250"  />
+
 
                     <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center"><Run Text="Serial No."/></TextBlock>
                     <TextBox x:Name="btnLastNamsse" TextChanged="btnLastName_TextChanged" TabIndex="2" />

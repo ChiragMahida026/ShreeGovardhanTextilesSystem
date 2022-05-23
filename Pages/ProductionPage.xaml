@@ -5,10 +5,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ShreeGovardhanTextilesSystem.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="4005" d:DesignWidth="5000"
       Title="ProductionPage">
 
-    <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
-        <Label Content="Production Page" Foreground="Black" FontSize="50" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-    </Border>
+   
 </Page>
