@@ -111,6 +111,7 @@
     <Compile Include="Pages\CustomTextBox.xaml.cs">
       <DependentUpon>CustomTextBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\DragAndDrop.cs" />
     <Compile Include="Pages\ReportPage.xaml.cs">
       <DependentUpon>ReportPage.xaml</DependentUpon>
     </Compile>
