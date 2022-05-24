@@ -65,7 +65,7 @@
             <StackPanel HorizontalAlignment="Left" Width="Auto" >
 
                 <StackPanel HorizontalAlignment="Left" Width="1776" Margin="0 0 0 0">
-                    <Label Style="{StaticResource heading}" Content="Purchases Page"   HorizontalContentAlignment="Center" FontWeight="Bold" FontFamily="Bell MT" FontStyle="Italic" FontSize="36" />
+                    <Label Style="{StaticResource heading}" Content="Production Page"   HorizontalContentAlignment="Center" FontWeight="Bold" FontFamily="Bell MT" FontStyle="Italic" FontSize="36" />
                     <StackPanel Orientation="Horizontal" Width="1762">
 
 
