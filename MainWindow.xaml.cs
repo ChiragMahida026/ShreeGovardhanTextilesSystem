@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ShreeGovardhanTextilesSystem.Pages;
-//using DragAssembly;
+using System.Diagnostics;
 //using UIKitTutorials.Pages;
 
 namespace ShreeGovardhanTextilesSystem
@@ -23,10 +23,38 @@ namespace ShreeGovardhanTextilesSystem
     /// </summary>
     public partial class MainWindow : Window
     {
+        private DragAndDrop dragAndDropWindow;
+
         public MainWindow()
         {
             InitializeComponent();
+            dragAndDropWindow = new DragAndDrop(this);
         }
+
+        private new void PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+          
+            this.OnMouseLeftButtonDown(sender, e);
+        }
+
+        private void OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+           
+            dragAndDropWindow.OnMouseLeftButtonDown(sender, e);
+        }
+
+        private void OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+           
+            dragAndDropWindow.OnMouseLeftButtonUp(sender, e);
+        }
+
+        private void OnMouseMove(object sender, MouseEventArgs e)
+        {
+            
+            dragAndDropWindow.OnMouseMove(sender, e);
+        }
+
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {

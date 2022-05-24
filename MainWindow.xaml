@@ -5,15 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShreeGovardhanTextilesSystem"
         mc:Ignorable="d" Name="home"
-        Title="MainWindow" Height="650" Width="1000"
+        Title="MainWindow" Height="Auto" Width="1000"
         WindowStartupLocation="CenterScreen" WindowStyle="None"
         Background="Transparent" AllowsTransparency="True"
-         WindowState="Normal">
-    <Border CornerRadius="8" Background="{DynamicResource PrimaryBackgroundColor}">
-        <Grid> 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition/>
+        ResizeMode="NoResize" WindowState="Normal"  MouseLeftButtonDown="OnMouseLeftButtonDown"
+        MouseLeftButtonUp="OnMouseLeftButtonUp"
+        MouseMove="OnMouseMove" >
+    <Border CornerRadius="8" Background="{DynamicResource PrimaryBackgroundColor}" Width="Auto" Height="Auto">
+        <Grid Height="Auto" >
+            <Grid.ColumnDefinitions  >
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <!-- Start: GridColum Left-->
             <Border CornerRadius="8 0 0 8" Background="{DynamicResource SecundaryBackgroundColor}">
@@ -25,7 +27,7 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     
-                    <!-- Logo -->
+                    <!-- Logo --> 
                     <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Top">
                         <Path Data="{DynamicResource logo}" Margin="16 0 0 0" Stretch="Fill" Fill="{DynamicResource PrimaryBlueColor}" Width="25" Height="25" HorizontalAlignment="Left"/>
                         <Label Content="SGT" Foreground="{DynamicResource PrimaryBlueColor}" FontWeight="Bold" FontSize="20" VerticalAlignment="Center" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="14 0 0 0"/>
@@ -95,8 +97,8 @@
                 </StackPanel>
                 <!-- End: Button Close | Restore | Minimize -->
                 
-                <Border Grid.Row="1" Margin="10">
-                    <Frame x:Name="PagesNavigation" NavigationUIVisibility="Hidden">
+                <Border Grid.Row="1" Margin="10" Height="Auto" Width="Auto">
+                    <Frame x:Name="PagesNavigation" NavigationUIVisibility="Hidden"  Height="Auto" Width="Auto">
                         <!-- Page Content -->
                     </Frame>
                 </Border>
