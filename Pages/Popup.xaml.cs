@@ -16,34 +16,18 @@ using System.Windows.Shapes;
 namespace ShreeGovardhanTextilesSystem.Pages
 {
     /// <summary>
-    /// Lógica de interacción para AddCompanyPage.xaml
+    /// Interaction logic for Popup.xaml
     /// </summary>
-    public partial class ReportPage : Page
+    public partial class Popup : Page
     {
-        public ReportPage()
+        public Popup()
         {
             InitializeComponent();
         }
 
-
-        private void Show_Click(object sender, RoutedEventArgs e)
-
+        public static implicit operator string(Popup v)
         {
-
-            MyPopup.IsOpen = true;
-
+            throw new NotImplementedException();
         }
-
-
-
-        private void Hide_Click(object sender, RoutedEventArgs e)
-
-        {
-
-            MyPopup.IsOpen = false;
-
-        }
-
     }
-
 }

@@ -21,4 +21,14 @@
     <!-- Icons Colors -->
     <SolidColorBrush x:Key="ActionIconColor" Color="#434344"/>
 
+
+    <SolidColorBrush x:Key="PrimaryBlueColors"  Color="#304FFE"/>
+    <SolidColorBrush x:Key="PrimaryTextColors" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="ButtonMouseOverColors" Color="#0026CA"/>
+    <SolidColorBrush x:Key="ButtonPressedColors" Color="#7A7CFF"/>
+
+
+    <SolidColorBrush x:Key="PrimaryDarkColors" Color="#0026cA"/>
+
+
 </ResourceDictionary>
