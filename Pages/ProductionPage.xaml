@@ -70,41 +70,37 @@
 
 
                         <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center">Serial No.</TextBlock>
-                        <TextBox x:Name="srno"  TabIndex="1" />
+                        <TextBox x:Name="txtserial"  TabIndex="1" />
 
 
                         <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center">Machine No.</TextBlock>
-                        <TextBox x:Name="mano"  TabIndex="2" />
+                        <TextBox x:Name="txtmno"  TabIndex="2" />
 
                         <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center">Gross Meter.</TextBlock>
-                        <TextBox x:Name="gm" TabIndex="3" />
+                        <TextBox x:Name="txtgm" TabIndex="3" TextChanged="txtgm_TextChanged" />
 
                         <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center"> Weight.</TextBlock>
-                        <TextBox x:Name="weight" TabIndex="3" />
+                        <TextBox x:Name="txtweight" TabIndex="4" TextChanged="txtweight_TextChanged"/>
 
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Width="1762">
 
 
                         <TextBlock FontSize="20" Margin="0 10 10 10 " VerticalAlignment="Center">Gross Quality.</TextBlock>
-                        <TextBox x:Name="gq"  TabIndex="5" IsReadOnly="True" />
-                        <!-- (Weight/Gross.meter)*100  Fourmula to find Gross Quality. -->
-
+                        <TextBox x:Name="txtgq"  TabIndex="250"  IsReadOnly="True" />
 
                         <TextBlock FontSize="20" Margin="0 10 10 10 " VerticalAlignment="Center">Add Extra Meter.</TextBlock>
-                        <TextBox x:Name="aem"  TabIndex="6" />
+                        <TextBox x:Name="txtem"  TabIndex="5" TextChanged="txtem_TextChanged" />
 
                         <TextBlock FontSize="20" Margin="40 10 10 10 " VerticalAlignment="Center">Net Meter.</TextBlock>
-                        <TextBox x:Name="nm" TabIndex="7" IsReadOnly="True" IsReadOnlyCaretVisible="False"/>
-                        <!-- (Gross meter + Extra meter)  Fourmula to find Net Meter. -->
+                        <TextBox x:Name="txtnm" TabIndex="252" IsReadOnly="True" IsReadOnlyCaretVisible="False"/>
 
                         <TextBlock FontSize="20" Margin="0 10 10 10 " VerticalAlignment="Center"> Net Weight.</TextBlock>
-                        <TextBox x:Name="nw" TabIndex="8" IsReadOnly="True" />
-                        <!-- (Weight/net Metwr)*100  Fourmula to find Net Meter. -->
+                        <TextBox x:Name="txtnw" TabIndex="253" IsReadOnly="True" />
 
                     </StackPanel>
 
-                    <Button Width="120" TabIndex="4" >
+                    <Button Width="120" TabIndex="6" Click="Button_Click" >
                         <StackPanel VerticalAlignment="Center" 
                     HorizontalAlignment="Center" Orientation="Horizontal" 
                     Background="Transparent" Height="35" >
@@ -122,7 +118,7 @@
 
                 </StackPanel>
                 <StackPanel  Width="1776" Margin="0 0 0 0">
-                    <DataGrid Height="600" HorizontalAlignment="Left" Width="1712" Margin="30,31,30,30" d:ItemsSource="{d:SampleData ItemCount=5}"></DataGrid>
+                    <DataGrid Height="600" HorizontalAlignment="Left" Width="1712" Margin="30,31,30,30" x:Name="datagrid"></DataGrid>
                     <Grid HorizontalAlignment="Right" />
 
 
