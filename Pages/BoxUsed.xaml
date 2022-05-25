@@ -77,7 +77,10 @@
 
 
                         <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center"><Run Text="Serial No."/></TextBlock>
-                        <TextBox x:Name="txtserial" TabIndex="2" />
+                        <ComboBox x:Name="txtserial" Height="30" FontSize="20" Width="200" Background="Transparent"  
+                           Foreground="Black"  
+                           IsEditable="True"   TabIndex="2" />
+
 
                     </StackPanel>
 
