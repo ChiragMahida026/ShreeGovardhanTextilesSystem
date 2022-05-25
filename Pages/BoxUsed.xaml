@@ -86,7 +86,7 @@
 
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="80 50 0 0">
-                        <Button Width="120" TabIndex="4"  Margin="0 0 30 0">
+                        <Button Width="120" TabIndex="4"  Margin="0 0 30 0" Click="Button_Click">
                             <StackPanel VerticalAlignment="Center" 
                     HorizontalAlignment="Center" Orientation="Horizontal" 
                     Background="Transparent" Height="35" >
