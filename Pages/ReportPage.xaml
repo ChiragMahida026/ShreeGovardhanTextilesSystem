@@ -64,22 +64,34 @@
             <StackPanel HorizontalAlignment="Left" Width="Auto">    
                 <StackPanel HorizontalAlignment="Left" Width="1776" Margin="0 0 0 0">
                     <Label Style="{StaticResource heading}" Content="Report Page"   HorizontalContentAlignment="Center" FontWeight="Bold" FontFamily="Bell MT" FontStyle="Italic" FontSize="36" />
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 50 0 0">
-                        <Button Click="Show_Click" Content="Box used" Style="{DynamicResource PrimaryButtonStyle}" FontFamily="Copperplate Gothic Light"  VerticalAlignment="Top"  Margin="20,20,0,0"/>
-                        <Button Content="Bim entry" Style="{DynamicResource PrimaryButtonStyle}" HorizontalAlignment="Right" FontFamily="Copperplate Gothic Light"  VerticalAlignment="Stretch"  Margin="129,17,0,0"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0 50 0 0">
+                        <Button Command="NavigationCommands.GoToPage" CommandParameter="/ProductionPage.xaml" Content="Box used" Style="{DynamicResource PrimaryButtonStyle}" FontFamily="Copperplate Gothic Light"  VerticalAlignment="Top"  Margin="20,20,0,0"/>
+                        <Button Content="Bim entry" Style="{DynamicResource PrimaryButtonStyle}" FontFamily="Copperplate Gothic Light"  VerticalAlignment="Stretch"  Margin="129,17,0,0"/>
                         <Button Content="create challen" Style="{DynamicResource PrimaryButtonStyle}" HorizontalAlignment="Right" FontFamily="Copperplate Gothic Light"  VerticalAlignment="Bottom"  Margin="129,17,0,0"/>
 
                         <Popup Margin="10,10,0,13" Name="MyPopup" HorizontalAlignment="Left" VerticalAlignment="Top" Width="194" Height="200" >
                             <StackPanel>
                                 <TextBlock Name="McTextBlock" Background="LightBlue"> This is popup text</TextBlock>
-                                <Button Content="This is button on a Pupup" Click="Hide_Click" />
+                                <Button Content="This is button on a Pupup" Click="Hide_Click" Height="100" />
                             </StackPanel>
                         </Popup>
-
-                       
-
                     </StackPanel>
                 </StackPanel>
+
+                <DataGrid Height="100" x:Name="datagrid" Margin="0 30 0 0" Width="1389"/>
+                <ComboBox  Width="800"   
+                           Height="50"  
+                           FontSize="18"  
+                           x:Name="dd"
+                           HorizontalAlignment="Center"   
+                           VerticalAlignment="Top"  
+                           BorderThickness="0"  
+                           VerticalContentAlignment="Center"  
+                           Padding="15,0,0,0"   
+                           Background="Transparent"  
+                           Foreground="Black"  
+                           IsEditable="True"  
+                           Margin="0 30 0 0" SelectionChanged="cmbCountryList_SelectionChanged"/>
             </StackPanel>
        
              

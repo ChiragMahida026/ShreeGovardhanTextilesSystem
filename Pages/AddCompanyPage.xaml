@@ -70,32 +70,32 @@
 
 
                         <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center">Name.</TextBlock>
-                        <TextBox x:Name="srno"  TabIndex="1" />
+                        <TextBox x:Name="txtname"  TabIndex="1" />
 
 
                         <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center">Gst No.</TextBlock>
-                        <TextBox x:Name="mano"  TabIndex="2" />
+                        <TextBox x:Name="txtgst"  TabIndex="2" />
 
                         <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center">Delivery.</TextBlock>
-                        <TextBox x:Name="gm" TabIndex="3" />
+                        <TextBox x:Name="txtdel" TabIndex="3" />
 
-                        <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center"> Before.</TextBlock>
-                        <TextBox x:Name="weight" TabIndex="3" />
+                        <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center"> Broker.</TextBlock>
+                        <TextBox x:Name="txtbroker" TabIndex="3" />
 
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Width="Auto"  Margin="0 0 0 0" HorizontalAlignment="Center">
 
 
-                        <TextBlock FontSize="20" Margin="0 10 10 10 " VerticalAlignment="Center"><Run Text="Meter."/></TextBlock>
-                        <TextBox x:Name="gq"  TabIndex="5"  />
+                        <TextBlock FontSize="20" Margin="0 10 10 10 " VerticalAlignment="Center"><Run Text="Master."/></TextBlock>
+                        <TextBox x:Name="txtmst"  TabIndex="5"  />
 
 
                         <TextBlock FontSize="20"  Margin="0 10 10 10 " VerticalAlignment="Center"><Run Text="Address."/></TextBlock>
-                        <TextBox x:Name="aem"  Width="512" TabIndex="6"   />
+                        <TextBox x:Name="txtadd"  Width="512" TabIndex="6"   />
 
                     </StackPanel>
 
-                    <Button Width="120" TabIndex="4" >
+                    <Button Width="120" TabIndex="4" Click="Button_Click" >
                         <StackPanel VerticalAlignment="Center" 
                     HorizontalAlignment="Center" Orientation="Horizontal" 
                     Background="Transparent" Height="35" >
@@ -113,7 +113,7 @@
 
                 </StackPanel>
                 <StackPanel  Width="1776" Margin="0 0 0 0">
-                    <DataGrid Height="600" HorizontalAlignment="Left" Width="1712" Margin="30,31,30,30" d:ItemsSource="{d:SampleData ItemCount=5}"></DataGrid>
+                    <DataGrid x:Name="datagrid" Height="600" HorizontalAlignment="Left" Width="1712" Margin="30,31,30,30"></DataGrid>
                     <Grid HorizontalAlignment="Right" />
 
 
