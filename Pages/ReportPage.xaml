@@ -64,6 +64,14 @@
             <StackPanel HorizontalAlignment="Left" Width="Auto">    
                 <StackPanel HorizontalAlignment="Left" Width="1776" Margin="0 0 0 0">
                     <Label Style="{StaticResource heading}" Content="Report Page"   HorizontalContentAlignment="Center" FontWeight="Bold" FontFamily="Bell MT" FontStyle="Italic" FontSize="36" />
+<<<<<<< HEAD
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 50 0 0">
+                        <Button Content="Box used" Style="{DynamicResource PrimaryButtonStyle}" FontFamily="Copperplate Gothic Light"  VerticalAlignment="Top"  Margin="20,20,0,0"/>
+                        <Button Click="Box_used" Content="Bim entry" Style="{DynamicResource PrimaryButtonStyle}" HorizontalAlignment="Right" FontFamily="Copperplate Gothic Light"  VerticalAlignment="Stretch"  Margin="129,17,0,0"/>
+                        <Button Content="create challen" Style="{DynamicResource PrimaryButtonStyle}" HorizontalAlignment="Right" FontFamily="Copperplate Gothic Light"  VerticalAlignment="Bottom"  Margin="129,17,0,0"/>
+
+
+=======
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0 50 0 0">
                         <Button Command="NavigationCommands.GoToPage" CommandParameter="/ProductionPage.xaml" Content="Box used" Style="{DynamicResource PrimaryButtonStyle}" FontFamily="Copperplate Gothic Light"  VerticalAlignment="Top"  Margin="20,20,0,0"/>
                         <Button Content="Bim entry" Style="{DynamicResource PrimaryButtonStyle}" FontFamily="Copperplate Gothic Light"  VerticalAlignment="Stretch"  Margin="129,17,0,0"/>
@@ -75,6 +83,7 @@
                                 <Button Content="This is button on a Pupup" Click="Hide_Click" Height="100" />
                             </StackPanel>
                         </Popup>
+>>>>>>> 12b29528332ae5eab827d2e8ea2019b1fe4538a2
                     </StackPanel>
                 </StackPanel>
 

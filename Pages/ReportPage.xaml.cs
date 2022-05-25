@@ -31,10 +31,13 @@ namespace ShreeGovardhanTextilesSystem.Pages
             dd.ItemsSource = dataset;
         }
 
-
-        private void Show_Click(object sender, RoutedEventArgs e)
-
+        private void Box_used(object sender, RoutedEventArgs e)
         {
+<<<<<<< HEAD
+            Console.WriteLine("hdkashdaskjdhj");
+            this.NavigationService.Navigate(new Uri("Boxused.xaml", UriKind.Relative));
+        }
+=======
            
             //NavigationService.Navigate(new Uri(@"C:\Users\ADMIN\Source\Repos\ShreeGovardhanTextilesSystem\Pages\ProductionPage.xaml", UriKind.Relative));
             //ProductionPage productionPage = new ProductionPage();
@@ -69,6 +72,7 @@ namespace ShreeGovardhanTextilesSystem.Pages
             }
         }
              
+>>>>>>> 12b29528332ae5eab827d2e8ea2019b1fe4538a2
     }
 
 }
