@@ -24,24 +24,12 @@ namespace ShreeGovardhanTextilesSystem.Pages
     {
 
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ADMIN\Source\Repos\ShreeGovardhanTextilesSystem\sgtdb.mdf;Integrated Security=True");
-        String[] dataset = {"Stock","Bim Stock"};
+        String[] dataset = { "Stock", "Bim Stock" };
         public ReportPage()
         {
             InitializeComponent();
             dd.ItemsSource = dataset;
         }
-
-
-        private void Show_Click(object sender, RoutedEventArgs e)
-
-        {
-           
-            //NavigationService.Navigate(new Uri(@"C:\Users\ADMIN\Source\Repos\ShreeGovardhanTextilesSystem\Pages\ProductionPage.xaml", UriKind.Relative));
-            //ProductionPage productionPage = new ProductionPage();
-            //this.Content = productionPage;
-        }
-
-
 
         private void Hide_Click(object sender, RoutedEventArgs e)
 
@@ -56,7 +44,8 @@ namespace ShreeGovardhanTextilesSystem.Pages
             loaddata(e.ToString());
         }
 
-        public void loaddata(String i) {
+        public void loaddata(String i)
+        {
             if (i == "Stock")
             {
                 SqlCommand cmd = new SqlCommand("select * from tbl_purchases", con);
@@ -68,7 +57,24 @@ namespace ShreeGovardhanTextilesSystem.Pages
                 datagrid.ItemsSource = dt.DefaultView;
             }
         }
-             
+
+        private void Box_used(object sender, RoutedEventArgs e)
+        {
+            BoxUsed page2Obj = new BoxUsed();
+            page2Obj.Show();
+        }
+
+        private void Bim_entry(object sender, RoutedEventArgs e)
+        {
+            BinEntry page2Obj = new BinEntry();
+            page2Obj.Show();
+        }
+
+        private void Create_challen(object sender, RoutedEventArgs e)
+        {
+            CreateChallen page2Obj = new CreateChallen();
+            page2Obj.Show();
+        }
     }
 
 }

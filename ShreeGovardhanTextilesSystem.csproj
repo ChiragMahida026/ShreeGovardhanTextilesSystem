@@ -91,6 +91,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\BimEntry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\BoxUsed.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CreateChallen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\CustomTextBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -129,6 +141,15 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\BimEntry.xaml.cs">
+      <DependentUpon>BimEntry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BoxUsed.xaml.cs">
+      <DependentUpon>BoxUsed.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CreateChallen.xaml.cs">
+      <DependentUpon>CreateChallen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\CustomTextBox.xaml.cs">
       <DependentUpon>CustomTextBox.xaml</DependentUpon>
     </Compile>
