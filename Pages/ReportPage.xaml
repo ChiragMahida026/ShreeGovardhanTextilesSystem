@@ -65,18 +65,10 @@
                 <StackPanel HorizontalAlignment="Left" Width="1776" Margin="0 0 0 0">
                     <Label Style="{StaticResource heading}" Content="Report Page"   HorizontalContentAlignment="Center" FontWeight="Bold" FontFamily="Bell MT" FontStyle="Italic" FontSize="36" />
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 50 0 0">
-                        <Button Click="Show_Click" Content="Box used" Style="{DynamicResource PrimaryButtonStyle}" FontFamily="Copperplate Gothic Light"  VerticalAlignment="Top"  Margin="20,20,0,0"/>
-                        <Button Content="Bim entry" Style="{DynamicResource PrimaryButtonStyle}" HorizontalAlignment="Right" FontFamily="Copperplate Gothic Light"  VerticalAlignment="Stretch"  Margin="129,17,0,0"/>
+                        <Button Content="Box used" Style="{DynamicResource PrimaryButtonStyle}" FontFamily="Copperplate Gothic Light"  VerticalAlignment="Top"  Margin="20,20,0,0"/>
+                        <Button Click="Box_used" Content="Bim entry" Style="{DynamicResource PrimaryButtonStyle}" HorizontalAlignment="Right" FontFamily="Copperplate Gothic Light"  VerticalAlignment="Stretch"  Margin="129,17,0,0"/>
                         <Button Content="create challen" Style="{DynamicResource PrimaryButtonStyle}" HorizontalAlignment="Right" FontFamily="Copperplate Gothic Light"  VerticalAlignment="Bottom"  Margin="129,17,0,0"/>
 
-                        <Popup Margin="10,10,0,13" Name="MyPopup" HorizontalAlignment="Left" VerticalAlignment="Top" Width="194" Height="200" >
-                            <StackPanel>
-                                <TextBlock Name="McTextBlock" Background="LightBlue"> This is popup text</TextBlock>
-                                <Button Content="This is button on a Pupup" Click="Hide_Click" />
-                            </StackPanel>
-                        </Popup>
-
-                       
 
                     </StackPanel>
                 </StackPanel>

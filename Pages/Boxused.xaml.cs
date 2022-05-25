@@ -16,20 +16,13 @@ using System.Windows.Shapes;
 namespace ShreeGovardhanTextilesSystem.Pages
 {
     /// <summary>
-    /// Lógica de interacción para AddCompanyPage.xaml
+    /// Interaction logic for Boxused.xaml
     /// </summary>
-    public partial class ReportPage : Page
+    public partial class Boxused : Page
     {
-        public ReportPage()
+        public Boxused()
         {
             InitializeComponent();
         }
-
-        private void Box_used(object sender, RoutedEventArgs e)
-        {
-            Console.WriteLine("hdkashdaskjdhj");
-            this.NavigationService.Navigate(new Uri("Boxused.xaml", UriKind.Relative));
-        }
     }
-
 }
