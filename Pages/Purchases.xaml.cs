@@ -62,7 +62,10 @@ namespace ShreeGovardhanTextilesSystem.Pages
             SqlDataReader sdr = cmd.ExecuteReader();
             dt.Load(sdr);
             con.Close();
-
+            while (sdr.Read())
+            {
+                abc[] = sdr["weight"].ToString();
+            }
             datagrid.ItemsSource = dt.DefaultView;
             
             SqlCommand cmd2 = new SqlCommand("select COUNT(*)AS 'TOTAL' from tbl_purchases where qlty = '32/36' and date_used IS NULL", con);
