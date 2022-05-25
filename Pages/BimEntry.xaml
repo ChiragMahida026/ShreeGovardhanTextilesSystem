@@ -5,9 +5,272 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShreeGovardhanTextilesSystem.Pages"
         mc:Ignorable="d"
-        Title="BimEntry" Height="450" Width="800">
+        Title="BimEntry" Height="4500" Width="8000">
+
+    <Window.Resources>
+
+        <Style x:Key="heading" TargetType="{x:Type Label}">
+            <Setter Property="FontSize" Value="24" />
+
+        </Style>
+
+        <Style x:Key="subHeading" TargetType="{x:Type Label}">
+            <Setter Property="FontSize" Value="16" />
+        </Style>
+
+        <Style x:Key="normal" TargetType="{x:Type Label}">
+            <Setter Property="FontSize" Value="12" />
+        </Style>
+
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="0,50,50,50"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="MinHeight" Value="20"/>
+            <Setter Property="MinWidth" Value="250"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="border"
+                            CornerRadius="2"
+                            BorderBrush="#000"
+                            BorderThickness="1"
+                            Background="#fff">
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                            Focusable="false"
+                                            HorizontalScrollBarVisibility="Hidden"
+                                            VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="#909090"/>
+                                <Setter Property="Foreground" Value="Red" />
+                                <Setter Property="FontWeight" Value="Bold" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="true">
+                                <Setter Property="Foreground" Value="Blue" />
+                                <Setter Property="BorderBrush" TargetName="border" Value="Blue"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
 
     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
-        <Label Content="Bim Entry" Foreground="Black" FontSize="50" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+
+            <StackPanel HorizontalAlignment="Left" Width="Auto">
+
+                <StackPanel Orientation="Horizontal" Width="1762">
+
+
+                    <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center"><Run Text="Date."/></TextBlock>
+                    <DatePicker Margin="-4,10,10,10" x:Name="txtdaterec" VerticalAlignment="Center"  TabIndex="1" FontSize="20"  Width="250"  />
+
+
+
+                </StackPanel>
+
+                <StackPanel  Width="1776" Margin="0 0 0 0">
+
+
+                    <Grid HorizontalAlignment="Left"  Margin="400 600 0 0 " >
+                        <StackPanel  Background="#C5FAD5" Margin="128,-630,281,735">
+                            <Label Style="{StaticResource normal}" Content="Stocks Update"   HorizontalContentAlignment="Center" FontWeight="Bold" FontStyle="Italic" FontSize="30" Background="#AA96DA" />
+                            <Label Style="{StaticResource normal}"  Margin="10,-3,10,-36" Content="Quality : 32/36"   HorizontalContentAlignment="Center" FontSize="25" FontFamily="Perpetua Titling MT"  />
+                            <Border Width="0" Height="180"   Background="#FFFD9D9D"/>
+                            <Grid Margin="5,-160,6,0" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200*"/>
+                                    <ColumnDefinition Width="189*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Orientation="Horizontal" Margin="2,-150,-13,-145" Grid.ColumnSpan="2"  HorizontalAlignment="Left">
+
+
+                                    <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center">Used Box.</TextBlock>
+                                    <TextBox x:Name="txtsdseridal" TabIndex="2" Height="42" />
+
+                                    <TextBlock FontSize="20" Margin="63,10,10,10" VerticalAlignment="Center">Purchase Weight.</TextBlock>
+                                    <TextBox x:Name="txtsesrdial" TabIndex="2" Height="46" />
+                                </StackPanel>
+
+
+
+                                <StackPanel Orientation="Horizontal" Margin="-33,-324,-13,-145" Grid.ColumnSpan="2"  HorizontalAlignment="Left">
+
+
+                                    <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center">Purchase Box.</TextBlock>
+                                    <TextBox x:Name="txtsderidal" TabIndex="2" Height="42" />
+
+                                    <TextBlock FontSize="20" Margin="63,10,10,10" VerticalAlignment="Center">Purchase Weight.</TextBlock>
+                                    <TextBox x:Name="txtserdial" TabIndex="2" Height="46" />
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal" Margin="19,175,-13,0" Grid.ColumnSpan="2" Height="139" VerticalAlignment="Top"  HorizontalAlignment="Left">
+
+
+                                    <TextBlock FontSize="20" Margin="47,10,10,10" VerticalAlignment="Center">Stock.</TextBlock>
+                                    <TextBox x:Name="txtscderidal" TabIndex="2" />
+
+                                    <TextBlock FontSize="20" Margin="63,10,10,10" VerticalAlignment="Center">Purchase Weight.</TextBlock>
+                                    <TextBox x:Name="txtscerdial" TabIndex="2" />
+                                </StackPanel>
+
+
+
+
+
+                            </Grid>
+                        </StackPanel>
+
+                        <StackPanel Background="#FFFFD2" Margin="128,-241,281,227" RenderTransformOrigin="0.5,0.5">
+                            <StackPanel.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </StackPanel.RenderTransform>
+                            <Label Style="{StaticResource normal}"  Margin="10,10,10,-30" Content="Quality : 40/24"   HorizontalContentAlignment="Center" FontSize="25" FontFamily="Perpetua Titling MT"  />
+                            <Border Width="0" Height="180"   Background="#FFFD9D9D"/>
+                            <Grid Margin="5,-160,6,0" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200*"/>
+                                    <ColumnDefinition Width="189*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Orientation="Horizontal" Margin="2,-150,-13,-145" Grid.ColumnSpan="2"  HorizontalAlignment="Left">
+
+
+                                    <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center">Used Box.</TextBlock>
+                                    <TextBox x:Name="txtsdsseridal" TabIndex="2" Height="42" />
+
+                                    <TextBlock FontSize="20" Margin="63,10,10,10" VerticalAlignment="Center">Purchase Weight.</TextBlock>
+                                    <TextBox x:Name="txtsessrdial" TabIndex="2" Height="46" />
+                                </StackPanel>
+
+
+
+                                <StackPanel Orientation="Horizontal" Margin="-33,-324,-13,-145" Grid.ColumnSpan="2"  HorizontalAlignment="Left">
+
+
+                                    <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center">Purchase Box.</TextBlock>
+                                    <TextBox x:Name="txtsdserssidal" TabIndex="2" Height="42" />
+
+                                    <TextBlock FontSize="20" Margin="63,10,10,10" VerticalAlignment="Center">Purchase Weight.</TextBlock>
+                                    <TextBox x:Name="txtssessrdial" TabIndex="2" Height="46" />
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal" Margin="19,175,-13,0" Grid.ColumnSpan="2" Height="139" VerticalAlignment="Top"  HorizontalAlignment="Left">
+
+
+                                    <TextBlock FontSize="20" Margin="47,10,10,10" VerticalAlignment="Center">Stock.</TextBlock>
+                                    <TextBox x:Name="txtscdseridal" TabIndex="2" />
+
+                                    <TextBlock FontSize="20" Margin="63,10,10,10" VerticalAlignment="Center">Purchase Weight.</TextBlock>
+                                    <TextBox x:Name="txtscserdial" TabIndex="2" />
+                                </StackPanel>
+
+
+
+
+
+                            </Grid>
+                        </StackPanel>
+
+                        <StackPanel Background="Beige" Margin="0,108,281,0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Width="954" Height="361" VerticalAlignment="Top">
+                            <StackPanel.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </StackPanel.RenderTransform>
+                            <Border Width="0" Height="180"   Background="#FFFD9D9D"/>
+                            <Grid Margin="5,-160,6,0" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200*"/>
+                                    <ColumnDefinition Width="189*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Orientation="Horizontal" Margin="2,-150,-13,-145" Grid.ColumnSpan="2"  HorizontalAlignment="Left">
+
+
+                                    <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center">Stock.</TextBlock>
+                                    <TextBox x:Name="txtsdsdadadseridal" TabIndex="2" Height="42" />
+                                </StackPanel>
+
+
+
+                                <StackPanel Orientation="Horizontal" Margin="-33,-324,-13,-145" Grid.ColumnSpan="2"  HorizontalAlignment="Left">
+
+
+                                    <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center">Bin Used.</TextBlock>
+                                    <TextBox x:Name="txtsdsdadadaerssidal" TabIndex="2" Height="42" />
+
+                                    <TextBlock FontSize="20" Margin="63,10,10,10" VerticalAlignment="Center">Bin Record.</TextBlock>
+                                    <TextBox x:Name="txtssesdadadadsrdial" TabIndex="2" Height="46" />
+                                </StackPanel>
+
+
+
+                                <StackPanel Orientation="Horizontal" Margin="19,175,-13,0" Grid.ColumnSpan="2" Height="139" VerticalAlignment="Top"  HorizontalAlignment="Left"/>
+
+
+
+
+
+
+                            </Grid>
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Button Width="120" TabIndex="4"  Margin="0,-78,0,185" >
+                                    <StackPanel VerticalAlignment="Center" 
+                    HorizontalAlignment="Center" Orientation="Horizontal" 
+                    Background="Transparent" >
+                                        <Viewbox Height="60" >
+                                            <Path Fill="Blue" 
+                      VerticalAlignment="Center" HorizontalAlignment="Center" 
+                      Data="M16,10H14V7H10V10H8L12,14M19,15H15A3,3 0 0,1 12,18A3,3 0 0,1 9,15H5V5H19M19,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z" RenderTransformOrigin="0.69,0.69"/>
+                                        </Viewbox>
+                                        <Label Content="Save" VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" VerticalContentAlignment="Center" 
+                   HorizontalContentAlignment="Center" Margin="2 1" Padding="5" 
+                   Foreground="Blue" FontSize="15" FontWeight="Bold"/>
+                                    </StackPanel>
+                                </Button>
+
+                                <Button Width="124"  TabIndex="4" Margin="53,-127.8,0,136" Height="64" >
+                                    <StackPanel VerticalAlignment="Center" 
+                    HorizontalAlignment="Center" Orientation="Horizontal" 
+                    Background="Transparent" >
+                                        <Viewbox Height="60" >
+                                            <Path Fill="red" 
+                      VerticalAlignment="Center" HorizontalAlignment="Center" 
+                      Data="M16,10H14V7H10V10H8L12,14M19,15H15A3,3 0 0,1 12,18A3,3 0 0,1 9,15H5V5H19M19,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z" RenderTransformOrigin="0.69,0.69"/>
+                                        </Viewbox>
+                                        <Label Content="Delete" VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" VerticalContentAlignment="Center" 
+                   HorizontalContentAlignment="Center" Margin="2 1" Padding="5" 
+                   Foreground="red" FontSize="15" FontWeight="Bold"/>
+                                    </StackPanel>
+
+                                </Button>
+                            </StackPanel>
+
+                        </StackPanel>
+
+
+                    </Grid>
+
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
     </Border>
 </Window>
