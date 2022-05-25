@@ -29,7 +29,7 @@ namespace ShreeGovardhanTextilesSystem.Pages
 
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ADMIN\Source\Repos\ShreeGovardhanTextilesSystem\sgtdb.mdf;Integrated Security=True");
 
-
+       
         public PurchasesPage()
         {
             InitializeComponent();
@@ -48,6 +48,8 @@ namespace ShreeGovardhanTextilesSystem.Pages
             RadioButton rb = sender as RadioButton;
             textBlock2.Text = "Selected Yarn : " + rb.Content;
             qlty = (rb.Content).ToString();
+
+
         }
 
 
@@ -59,8 +61,9 @@ namespace ShreeGovardhanTextilesSystem.Pages
             SqlDataReader sdr = cmd.ExecuteReader();
             dt.Load(sdr);
             con.Close();
-            datagrid.ItemsSource = dt.DefaultView;
 
+            datagrid.ItemsSource = dt.DefaultView;
+            
             SqlCommand cmd2 = new SqlCommand("select COUNT(*)AS 'TOTAL' from tbl_purchases where qlty = '32/36' and date_used IS NULL", con);
             con.Open();
             tbox.Content = Convert.ToInt32(cmd2.ExecuteScalar());
