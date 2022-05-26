@@ -5,9 +5,149 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShreeGovardhanTextilesSystem.Pages"
         mc:Ignorable="d"
-        Title="CreateChallen" Height="450" Width="800">
+        Title="CreateChallen" Height="1000" Width="1700">
+
+    <Window.Resources>
+
+        <Style x:Key="heading" TargetType="{x:Type Label}">
+            <Setter Property="FontSize" Value="24" />
+
+        </Style>
+
+        <Style x:Key="subHeading" TargetType="{x:Type Label}">
+            <Setter Property="FontSize" Value="16" />
+        </Style>
+
+        <Style x:Key="normal" TargetType="{x:Type Label}">
+            <Setter Property="FontSize" Value="12" />
+        </Style>
+
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="0,50,50,50"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="MinHeight" Value="20"/>
+            <Setter Property="MinWidth" Value="250"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="border"
+                            CornerRadius="2"
+                            BorderBrush="#000"
+                            BorderThickness="1"
+                            Background="#fff">
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                            Focusable="false"
+                                            HorizontalScrollBarVisibility="Hidden"
+                                            VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="#909090"/>
+                                <Setter Property="Foreground" Value="Red" />
+                                <Setter Property="FontWeight" Value="Bold" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="true">
+                                <Setter Property="Foreground" Value="Blue" />
+                                <Setter Property="BorderBrush" TargetName="border" Value="Blue"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="PrimaryButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="{DynamicResource PrimaryBlueColors}"/>
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryTextColors}"/>
+            <Setter Property="Padding" Value="12 6 12 6"/>
+            <Setter Property="MaxHeight" Value="40"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="btnBorder" CornerRadius="5" Background="{TemplateBinding Background}" Width="{TemplateBinding Width}" MaxHeight="{TemplateBinding MaxHeight}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True" Padding="{TemplateBinding Padding}">
+                            <ContentPresenter x:Name="ContentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" RecognizesAccessKey="True"></ContentPresenter>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="btnBorder" Property="Background" Value="{DynamicResource ButtonMouseOverColors}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="btnBorder" Property="Background" Value="{DynamicResource ButtonPressedColors}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+
+            </Setter>
+
+        </Style>
+
+    </Window.Resources>
 
     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
-        <Label Content="CreateChallen Page" Foreground="Black" FontSize="50" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <StackPanel HorizontalAlignment="Left" Width="Auto" >
+
+                <StackPanel HorizontalAlignment="Left" Width="1776" Margin="0 0 0 0">
+                    <Label Style="{StaticResource heading}" Content="Create Challen Page"   HorizontalContentAlignment="Center" FontWeight="Bold" FontFamily="Bell MT" FontStyle="Italic" FontSize="36" />
+                    <StackPanel Orientation="Horizontal" Width="1762">
+
+
+                        <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center">Challan No.</TextBlock>
+                        <TextBox x:Name="txtserial"  TabIndex="1" />
+
+
+                        <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center">Taka No.</TextBlock>
+                        <TextBox x:Name="txtmno"  TabIndex="2" />
+
+                        <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center">Party.</TextBlock>
+                        <TextBox x:Name="txtgm" TabIndex="3"  />
+
+                        <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center"> Lot.</TextBlock>
+                        <TextBox x:Name="txtweight" TabIndex="4" />
+
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Label Style="{StaticResource normal}"  Margin="10 10 10 10" Content="Total Taka :"   HorizontalContentAlignment="Center" FontSize="25" FontFamily="Perpetua Titling MT"  />
+                        <Label Foreground="Red" Style="{StaticResource normal}" Margin="-10 10 10 10" FontSize="25" FontFamily="Perpetua Titling MT"  Content="00"></Label>
+                        <Label Style="{StaticResource normal}"  Margin="10 10 10 10" Content="Total Meter :"   HorizontalContentAlignment="Center" FontSize="25" FontFamily="Perpetua Titling MT"  />
+                        <Label Foreground="Red"  Style="{StaticResource normal}" Margin="-10 10 10 10" FontSize="25" FontFamily="Perpetua Titling MT"  Content="00"></Label>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                        <!-- <Button  Content="Save" Style="{DynamicResource PrimaryButtonStyle}" FontFamily="Copperplate Gothic Light"  VerticalAlignment="Top"  Margin="20,20,0,0" /> -->
+
+                        <Button Width="120" TabIndex="6"  >
+                                <StackPanel VerticalAlignment="Center"  HorizontalAlignment="Center" Orientation="Horizontal" Background="Transparent" Height="35" >
+                                    
+                                    <Label Content="Create" VerticalAlignment="Center"  HorizontalAlignment="Center" VerticalContentAlignment="Center"  HorizontalContentAlignment="Center" Margin="2 1" Padding="5" Foreground="Blue" FontSize="15" FontWeight="Bold"/>
+                                </StackPanel>
+                            </Button>
+
+                        <Button Width="120" TabIndex="6" Margin="39,0,0,0" >
+                            <StackPanel VerticalAlignment="Center"  HorizontalAlignment="Center" Orientation="Horizontal" Background="Transparent" Height="35" >
+                             
+                                <Label Content="Done" VerticalAlignment="Center"  HorizontalAlignment="Center" VerticalContentAlignment="Center"  HorizontalContentAlignment="Center" Margin="2 1" Padding="5" Foreground="Red" FontSize="15" FontWeight="Bold"/>
+                            </StackPanel>
+                        </Button>
+
+
+                    </StackPanel>
+
+                </StackPanel>
+                <StackPanel  Width="1776" Margin="0 0 0 0">
+                    <DataGrid Height="600" HorizontalAlignment="Left" Width="1500" Margin="30,31,30,30" x:Name="datagrid"></DataGrid>
+                    <Grid HorizontalAlignment="Right" />
+
+
+
+                </StackPanel>
+            </StackPanel>
+
+        </ScrollViewer>
+
     </Border>
 </Window>

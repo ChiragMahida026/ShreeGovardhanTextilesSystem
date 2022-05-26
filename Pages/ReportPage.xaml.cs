@@ -35,7 +35,7 @@ namespace ShreeGovardhanTextilesSystem.Pages
 
         {
 
-            MyPopup.IsOpen = false;
+            
 
         }
 
