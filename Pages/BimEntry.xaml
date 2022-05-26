@@ -92,10 +92,10 @@
 
 
                                     <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center">Used Box.</TextBlock>
-                                    <TextBox x:Name="txtsdseridal" TabIndex="2" Height="42" />
+                                    <TextBox x:Name="txtptbox" TabIndex="2" Height="42" />
 
-                                    <TextBlock FontSize="20" Margin="63,10,10,10" VerticalAlignment="Center">Purchase Weight.</TextBlock>
-                                    <TextBox x:Name="txtsesrdial" TabIndex="2" Height="46" />
+                                    <TextBlock FontSize="20" Margin="80,10,10,10" VerticalAlignment="Center">Purchase Kg.</TextBlock>
+                                    <TextBox x:Name="txtptweight" TabIndex="2" Height="46" />
                                 </StackPanel>
 
 
@@ -104,20 +104,24 @@
 
 
                                     <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center">Purchase Box.</TextBlock>
-                                    <TextBox x:Name="txtsderidal" TabIndex="2" Height="42" />
+                                    <TextBox x:Name="txtutbox" TabIndex="2" Height="42"  />
 
-                                    <TextBlock FontSize="20" Margin="63,10,10,10" VerticalAlignment="Center">Purchase Weight.</TextBlock>
-                                    <TextBox x:Name="txtserdial" TabIndex="2" Height="46" />
+                                    <TextBlock FontSize="20" Margin="80,10,10,10" VerticalAlignment="Center">Purchase Kg.</TextBlock>
+                                    <TextBox x:Name="txtutweight" TabIndex="2" Height="46" />
                                 </StackPanel>
 
                                 <StackPanel Orientation="Horizontal" Margin="19,175,-13,0" Grid.ColumnSpan="2" Height="139" VerticalAlignment="Top"  HorizontalAlignment="Left">
 
 
-                                    <TextBlock FontSize="20" Margin="47,10,10,10" VerticalAlignment="Center">Stock.</TextBlock>
-                                    <TextBox x:Name="txtscderidal" TabIndex="2" />
+                                    <TextBlock FontSize="20" Margin="10,10,10,10" VerticalAlignment="Center">Stock Box.</TextBlock>
+                                    <TextBox x:Name="txtstbox" TabIndex="2" />
+                                    <Label FontSize="20" x:Name="tstbox" Margin="-150,10,10,10" VerticalAlignment="Center" Foreground="Red"></Label>
 
-                                    <TextBlock FontSize="20" Margin="63,10,10,10" VerticalAlignment="Center">Purchase Weight.</TextBlock>
-                                    <TextBox x:Name="txtscerdial" TabIndex="2" />
+
+                                    <TextBlock FontSize="20" Margin="100,10,10,10" VerticalAlignment="Center">Stock Kg.</TextBlock>
+                                    <TextBox x:Name="txtstweight" TabIndex="2" />
+                                    <Label FontSize="20" x:Name="tstweight" Margin="-150,10,10,10" VerticalAlignment="Center" Foreground="Red"></Label>
+
                                 </StackPanel>
 
 
@@ -148,10 +152,10 @@
 
 
                                     <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center">Used Box.</TextBlock>
-                                    <TextBox x:Name="txtsdsseridal" TabIndex="2" Height="42" />
+                                    <TextBox x:Name="txtufbox" TabIndex="2" Height="42" />
 
-                                    <TextBlock FontSize="20" Margin="63,10,10,10" VerticalAlignment="Center">Purchase Weight.</TextBlock>
-                                    <TextBox x:Name="txtsessrdial" TabIndex="2" Height="46" />
+                                    <TextBlock FontSize="20" Margin="110,10,10,10" VerticalAlignment="Center">Used Kg.</TextBlock>
+                                    <TextBox x:Name="txtufweight" TabIndex="2" Height="46" />
                                 </StackPanel>
 
 
@@ -160,20 +164,25 @@
 
 
                                     <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center">Purchase Box.</TextBlock>
-                                    <TextBox x:Name="txtsdserssidal" TabIndex="2" Height="42" />
+                                    <TextBox x:Name="txtpfbox" TabIndex="2" Height="42" />
 
-                                    <TextBlock FontSize="20" Margin="63,10,10,10" VerticalAlignment="Center">Purchase Weight.</TextBlock>
-                                    <TextBox x:Name="txtssessrdial" TabIndex="2" Height="46" />
+                                    <TextBlock FontSize="20" Margin="75,10,10,10" VerticalAlignment="Center">Purchase Kg.</TextBlock>
+                                    <TextBox x:Name="txtpfweight" TabIndex="2" Height="46" />
                                 </StackPanel>
 
                                 <StackPanel Orientation="Horizontal" Margin="19,175,-13,0" Grid.ColumnSpan="2" Height="139" VerticalAlignment="Top"  HorizontalAlignment="Left">
 
 
-                                    <TextBlock FontSize="20" Margin="47,10,10,10" VerticalAlignment="Center">Stock.</TextBlock>
-                                    <TextBox x:Name="txtscdseridal" TabIndex="2" />
+                                    <TextBlock FontSize="20" Margin="10,10,10,10" VerticalAlignment="Center">Stock Box.</TextBlock>
+                                    <TextBox x:Name="txtsfbox" TabIndex="2" />
+                                    <Label FontSize="20" x:Name="fsfbox" Margin="-150,10,10,10" VerticalAlignment="Center" Foreground="Red"></Label>
 
-                                    <TextBlock FontSize="20" Margin="63,10,10,10" VerticalAlignment="Center">Purchase Weight.</TextBlock>
-                                    <TextBox x:Name="txtscserdial" TabIndex="2" />
+
+                                    <TextBlock FontSize="20" Margin="100,10,10,10" VerticalAlignment="Center">Stock Kg.</TextBlock>
+                                    <TextBox x:Name="txtsfweight" TabIndex="2" />
+                                    <Label FontSize="20" x:Name="fsfweight" Margin="-150,10,10,10" VerticalAlignment="Center" Foreground="Red"/>
+                                   
+
                                 </StackPanel>
 
 
@@ -193,7 +202,7 @@
                                 </TransformGroup>
                             </StackPanel.RenderTransform>
                             <Border Width="0" Height="180"   Background="#FFFD9D9D"/>
-                            <Grid Margin="5,-160,6,0" >
+                            <Grid Margin="50,-160,6,0" >
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="200*"/>
                                     <ColumnDefinition Width="189*"/>
@@ -202,8 +211,10 @@
                                 <StackPanel Orientation="Horizontal" Margin="2,-150,-13,-145" Grid.ColumnSpan="2"  HorizontalAlignment="Left">
 
 
-                                    <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center">Stock.</TextBlock>
-                                    <TextBox x:Name="txtsdsdadadseridal" TabIndex="2" Height="42" />
+                                    <TextBlock FontSize="20" Margin="25 10 10 10 " VerticalAlignment="Center">Stock.</TextBlock>
+                                    <TextBox x:Name="txtbimstock" TabIndex="2" Height="42" />
+                                    <Label FontSize="20" x:Name="bstk" Margin="-150,10,10,10" VerticalAlignment="Center" Foreground="Red"/>
+
                                 </StackPanel>
 
 
@@ -212,10 +223,10 @@
 
 
                                     <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center">Bin Used.</TextBlock>
-                                    <TextBox x:Name="txtsdsdadadaerssidal" TabIndex="2" Height="42" />
+                                    <TextBox x:Name="txtbimused"   TabIndex="2" Height="42" TextChanged="txtbimused_TextChanged" />
 
-                                    <TextBlock FontSize="20" Margin="63,10,10,10" VerticalAlignment="Center">Bin Record.</TextBlock>
-                                    <TextBox x:Name="txtssesdadadadsrdial" TabIndex="2" Height="46" />
+                                    <TextBlock FontSize="20" Margin="140,10,10,10" VerticalAlignment="Center">Bin Rec.</TextBlock>
+                                    <TextBox x:Name="txtbimrec"  TabIndex="2" Height="46" TextChanged="txtbimrec_TextChanged" />
                                 </StackPanel>
 
 
@@ -230,7 +241,7 @@
                             </Grid>
 
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                <Button Width="120" TabIndex="4"  Margin="0,-78,0,185" >
+                                <Button Width="120" TabIndex="4"  Margin="0,-78,0,185" Click="filldata" >
                                     <StackPanel VerticalAlignment="Center" 
                     HorizontalAlignment="Center" Orientation="Horizontal" 
                     Background="Transparent" >
@@ -246,7 +257,7 @@
                                     </StackPanel>
                                 </Button>
 
-                                <Button Width="124"  TabIndex="4" Margin="53,-127.8,0,136" Height="64" >
+                                <Button Width="124"  TabIndex="4" Margin="53,-127.8,0,136" Height="64" Click="getdata" >
                                     <StackPanel VerticalAlignment="Center" 
                     HorizontalAlignment="Center" Orientation="Horizontal" 
                     Background="Transparent" >
@@ -255,7 +266,7 @@
                       VerticalAlignment="Center" HorizontalAlignment="Center" 
                       Data="M16,10H14V7H10V10H8L12,14M19,15H15A3,3 0 0,1 12,18A3,3 0 0,1 9,15H5V5H19M19,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z" RenderTransformOrigin="0.69,0.69"/>
                                         </Viewbox>
-                                        <Label Content="Delete" VerticalAlignment="Center" 
+                                        <Label Content="Done" VerticalAlignment="Center" 
                    HorizontalAlignment="Center" VerticalContentAlignment="Center" 
                    HorizontalContentAlignment="Center" Margin="2 1" Padding="5" 
                    Foreground="red" FontSize="15" FontWeight="Bold"/>

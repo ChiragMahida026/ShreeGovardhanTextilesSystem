@@ -44,6 +44,7 @@ namespace ShreeGovardhanTextilesSystem.Pages
             loaddata();
         }
 
+
         private void HandleCheck(object sender, RoutedEventArgs e)
         {
             RadioButton rb = sender as RadioButton;

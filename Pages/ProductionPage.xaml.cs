@@ -43,6 +43,10 @@ namespace ShreeGovardhanTextilesSystem.Pages
             filldata();
         }
 
+        private void txtserial_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
 
         private void txtem_TextChanged(object sender, TextChangedEventArgs e)
         {
