@@ -97,30 +97,34 @@
 
 
                         <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center">Challan No.</TextBlock>
-                        <TextBox x:Name="txtserial"  TabIndex="1" />
+                        <TextBox x:Name="txtchlno" TabIndex="1" />
+                        <TextBlock FontSize="20" Margin="-355 -110 10 10 " VerticalAlignment="Center"><Run Text="Date."/></TextBlock>
+                        <DatePicker Margin="-338,-110,10,10" x:Name="txtdaterec" VerticalAlignment="Center"  TabIndex="1" FontSize="20"  Width="250"  />
 
 
                         <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center">Taka No.</TextBlock>
-                        <TextBox x:Name="txtmno"  TabIndex="2" />
+                        <TextBox x:Name="txttakano"  TabIndex="2" />
 
                         <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center">Party.</TextBlock>
-                        <TextBox x:Name="txtgm" TabIndex="3"  />
+                        <ComboBox x:Name="txtparty" Height="30" FontSize="20" Width="200" Background="Transparent"  
+                           Foreground="Black"  
+                           IsEditable="True"   TabIndex="2" />
 
                         <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center"> Lot.</TextBlock>
-                        <TextBox x:Name="txtweight" TabIndex="4" />
+                        <TextBox x:Name="txtlot" TabIndex="4" />
 
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <Label Style="{StaticResource normal}"  Margin="10 10 10 10" Content="Total Taka :"   HorizontalContentAlignment="Center" FontSize="25" FontFamily="Perpetua Titling MT"  />
-                        <Label Foreground="Red" Style="{StaticResource normal}" Margin="-10 10 10 10" FontSize="25" FontFamily="Perpetua Titling MT"  Content="00"></Label>
+                        <Label Foreground="Red" Style="{StaticResource normal}" Margin="-10 10 10 10" FontSize="25" FontFamily="Perpetua Titling MT"  x:Name="tottaka" Content="00"></Label>
                         <Label Style="{StaticResource normal}"  Margin="10 10 10 10" Content="Total Meter :"   HorizontalContentAlignment="Center" FontSize="25" FontFamily="Perpetua Titling MT"  />
-                        <Label Foreground="Red"  Style="{StaticResource normal}" Margin="-10 10 10 10" FontSize="25" FontFamily="Perpetua Titling MT"  Content="00"></Label>
+                        <Label Foreground="Red"  Style="{StaticResource normal}" Margin="-10 10 10 10" FontSize="25" FontFamily="Perpetua Titling MT" x:Name="totmtr" Content="00"></Label>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
                         <!-- <Button  Content="Save" Style="{DynamicResource PrimaryButtonStyle}" FontFamily="Copperplate Gothic Light"  VerticalAlignment="Top"  Margin="20,20,0,0" /> -->
 
-                        <Button Width="120" TabIndex="6"  >
+                        <Button Width="120" TabIndex="6" Click="Button_Click"  >
                                 <StackPanel VerticalAlignment="Center"  HorizontalAlignment="Center" Orientation="Horizontal" Background="Transparent" Height="35" >
                                     
                                     <Label Content="Create" VerticalAlignment="Center"  HorizontalAlignment="Center" VerticalContentAlignment="Center"  HorizontalContentAlignment="Center" Margin="2 1" Padding="5" Foreground="Blue" FontSize="15" FontWeight="Bold"/>
@@ -139,6 +143,9 @@
 
                 </StackPanel>
                 <StackPanel  Width="1776" Margin="0 0 0 0">
+                    <Button Width="120" TabIndex="4" Click="Button_Click_1" >done</Button>
+
+
                     <DataGrid Height="600" HorizontalAlignment="Left" Width="1500" Margin="30,31,30,30" x:Name="datagrid"></DataGrid>
                     <Grid HorizontalAlignment="Right" />
 

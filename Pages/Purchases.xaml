@@ -128,7 +128,10 @@
 
                 </StackPanel>
                 <StackPanel  Width="1776" Margin="0 0 0 0">
-                    <DataGrid Height="600" HorizontalAlignment="Left" Width="1284" Margin="30" x:Name="datagrid"></DataGrid>
+                    <Button Width="120" TabIndex="4" Click="Button_Click_1" >done</Button>
+
+                    <DataGrid Height="600" x:Name="datagrid" HorizontalAlignment="Left" ColumnWidth="*" BorderBrush="Gray" BorderThickness="5" 
+                               Width="1284" Margin="30" />
                     <Grid HorizontalAlignment="Right" >
                         <StackPanel Height="330" Background="#C5FAD5" Margin="30,-930,30,0" Width="400">
                             <Label Style="{StaticResource normal}" Content="Stocks"   HorizontalContentAlignment="Center" FontWeight="Bold" FontStyle="Italic" FontSize="30" Background="#AA96DA" />

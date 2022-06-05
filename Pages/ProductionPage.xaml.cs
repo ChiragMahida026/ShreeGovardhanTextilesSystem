@@ -24,13 +24,32 @@ namespace ShreeGovardhanTextilesSystem.Pages
     {
         String serial, mcno;
         float gmtr, weight, gqlty, em, nm, nw;
-
+        SqlCommandBuilder cmdbl;
+        SqlDataAdapter adap;
+        DataSet ds;
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ADMIN\Source\Repos\ShreeGovardhanTextilesSystem\sgtdb.mdf;Integrated Security=True");
 
 
         public ProductionPage()
         {
             InitializeComponent();
+
+        
+            loaddata();
+          
+
+        }
+
+        public void setser()
+        {
+            SqlCommand cmd2 = new SqlCommand("select max(serial)+1 from tbl_production", con);
+            con.Open();
+            try
+            {
+                txtserial.Text = cmd2.ExecuteScalar().ToString();
+            }
+            catch (SqlException err) { }
+            con.Close();
         }
 
         private void txtweight_TextChanged(object sender, TextChangedEventArgs e)
@@ -118,21 +137,25 @@ namespace ShreeGovardhanTextilesSystem.Pages
                 con.Close();
                 loaddata();
                 clearData();
-                
+                setser();
             }
-            catch (SqlException err) { }
+            catch (SqlException err) { MessageBox.Show("Fill all the detials correctly..."); }
            
         }
 
         public void loaddata()
         {
-            SqlCommand cmd = new SqlCommand("select * from tbl_production", con);
-            DataTable dt = new DataTable();
-            con.Open();
-            SqlDataReader sdr = cmd.ExecuteReader();
-            dt.Load(sdr);
-            con.Close();
-            datagrid.ItemsSource = dt.DefaultView;
+           
+
+            adap = new SqlDataAdapter("select * from tbl_production", con);
+
+            ds = new DataSet();
+            adap.Fill(ds, "purchases detail");
+            datagrid.ItemsSource = ds.Tables[0].DefaultView;
+
+            datagrid.ScrollIntoView(datagrid.Items.GetItemAt(datagrid.Items.Count - 1));
+            datagrid.FontSize = 20;
+            setser();
         }
 
         public void clearData()
@@ -148,5 +171,15 @@ namespace ShreeGovardhanTextilesSystem.Pages
         }
 
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            cmdbl = new SqlCommandBuilder(adap);
+            adap.Update(ds, "purchases detail");
+            MessageBox.Show("Information Updated", "Update");
+            loaddata();
+
+        }
+
+
     }
-    }
+}
