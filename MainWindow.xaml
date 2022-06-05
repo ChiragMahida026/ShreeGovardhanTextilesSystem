@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ShreeGovardhanTextilesSystem"
         mc:Ignorable="d" Name="home"
         Title="MainWindow" Height="Auto" Width="1000"
-        WindowStartupLocation="CenterScreen" WindowStyle="None"
+        WindowStartupLocation="CenterScreen" WindowStyle="None "
         Background="Transparent" AllowsTransparency="True"
         ResizeMode="NoResize" WindowState="Normal"  MouseLeftButtonDown="OnMouseLeftButtonDown"
         MouseLeftButtonUp="OnMouseLeftButtonUp"
