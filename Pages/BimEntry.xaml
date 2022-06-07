@@ -92,10 +92,10 @@
 
 
                                     <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center">Used Box.</TextBlock>
-                                    <TextBox x:Name="txtptbox" TabIndex="2" Height="42" />
+                                    <TextBox x:Name="txtutbox" TabIndex="2" Height="42" />
 
                                     <TextBlock FontSize="20" Margin="80,10,10,10" VerticalAlignment="Center">Purchase Kg.</TextBlock>
-                                    <TextBox x:Name="txtptweight" TabIndex="2" Height="46" />
+                                    <TextBox x:Name="txtutweight" TabIndex="2" Height="46" />
                                 </StackPanel>
 
 
@@ -104,10 +104,10 @@
 
 
                                     <TextBlock FontSize="20" Margin="30 10 10 10 " VerticalAlignment="Center">Purchase Box.</TextBlock>
-                                    <TextBox x:Name="txtutbox" TabIndex="2" Height="42"  />
+                                    <TextBox x:Name="txtptbox" TabIndex="2" Height="42"  />
 
                                     <TextBlock FontSize="20" Margin="80,10,10,10" VerticalAlignment="Center">Purchase Kg.</TextBlock>
-                                    <TextBox x:Name="txtutweight" TabIndex="2" Height="46" />
+                                    <TextBox x:Name="txtptweight" TabIndex="2" Height="46" />
                                 </StackPanel>
 
                                 <StackPanel Orientation="Horizontal" Margin="19,175,-13,0" Grid.ColumnSpan="2" Height="139" VerticalAlignment="Top"  HorizontalAlignment="Left">

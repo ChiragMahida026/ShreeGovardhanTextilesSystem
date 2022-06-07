@@ -29,7 +29,7 @@ namespace ShreeGovardhanTextilesSystem.Pages
         SqlDataAdapter adap;
         DataSet ds;
         List<Double> lstmtr = new List<Double>();
-        List<String> lstser = new List<String>();
+        List<Int32> lstser = new List<Int32>();
 
 
         public CreateChallen()
@@ -159,7 +159,7 @@ namespace ShreeGovardhanTextilesSystem.Pages
 
                 while (sdr.Read())
                 {
-                    lstser.Add((string)sdr["serial"]);
+                    lstser.Add((Int32)sdr["serial"]);
                     lstmtr.Add((double)sdr["nmtr"]);
                 }
                 sdr.Close();

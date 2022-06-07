@@ -102,7 +102,7 @@ namespace ShreeGovardhanTextilesSystem.Pages
         
         public void getdata()
         {
-            cno = "2";
+            cno = "1";
             SqlCommand cmd2 = new SqlCommand("SELECT * FROM tbl_challen where chlno = @name", con);
 
             cmd2.CommandType = CommandType.Text;
@@ -153,7 +153,7 @@ namespace ShreeGovardhanTextilesSystem.Pages
             Excel.Worksheet worksheet;
             Excel.Range sampleCell;
 
-            string excelFinalPath = @"D:\DemoExample\XmlFileuse3.xlsx";
+            string excelFinalPath = @"D:\DemoExample\2.xlsx";
             Microsoft.Office.Interop.Excel.Application application = new Microsoft.Office.Interop.Excel.Application();
                 workBook = application.Workbooks.Open(excelFinalPath);
                 
@@ -247,17 +247,16 @@ namespace ShreeGovardhanTextilesSystem.Pages
                    
                 
             }
-                try
-                {
-                     workBook.SaveAs(excelFinalPath);
-                }
-                catch (COMException err) {
-                    workBook.Close(false, excelFinalPath, null);
+
+
+
+
+                workBook.SaveAs(excelFinalPath);
+                
+                    workBook.Close();
                     application.Quit();
                     Marshal.ReleaseComObject(workBook);
-                    MessageBox.Show(err.Message);
-                }
-                
+                  
 
 
                 // PdfDownload();

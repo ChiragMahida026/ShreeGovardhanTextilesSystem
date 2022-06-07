@@ -170,12 +170,14 @@ namespace ShreeGovardhanTextilesSystem.Pages
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            cmdbl = new SqlCommandBuilder(adap);
-            adap.Update(ds, "purchases detail");
-            MessageBox.Show("Information Updated","Update");
-            loaddata();
+             cmdbl = new SqlCommandBuilder(adap);
+             adap.Update(ds, "purchases detail");
+             MessageBox.Show("Information Updated","Update");
+             loaddata();
+           
         }
 
+        
 
     }
 }

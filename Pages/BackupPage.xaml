@@ -4,11 +4,81 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ShreeGovardhanTextilesSystem.Pages"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="BackupPage">
+      mc:Ignorable="d"
+      Title="BackupPage" Height="948" Width="1652">
+
+    <Page.Resources>
+
+        <Style x:Key="heading" TargetType="{x:Type Label}">
+            <Setter Property="FontSize" Value="24" />
+
+        </Style>
+
+        <Style x:Key="subHeading" TargetType="{x:Type Label}">
+            <Setter Property="FontSize" Value="16" />
+        </Style>
+
+        <Style x:Key="normal" TargetType="{x:Type Label}">
+            <Setter Property="FontSize" Value="12" />
+        </Style>
+
+        <Style x:Key="PrimaryButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="{DynamicResource PrimaryBlueColors}"/>
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryTextColors}"/>
+            <Setter Property="Padding" Value="12 6 12 6"/>
+            <Setter Property="MaxHeight" Value="40"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="btnBorder" CornerRadius="5" Background="{TemplateBinding Background}" Width="{TemplateBinding Width}" MaxHeight="{TemplateBinding MaxHeight}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True" Padding="{TemplateBinding Padding}">
+                            <ContentPresenter x:Name="ContentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" RecognizesAccessKey="True"></ContentPresenter>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="btnBorder" Property="Background" Value="{DynamicResource ButtonMouseOverColors}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="btnBorder" Property="Background" Value="{DynamicResource ButtonPressedColors}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+
+            </Setter>
+
+        </Style>
+
+
+
+
+    </Page.Resources>
+
+
 
     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
-        <Label Content="Backup Page" Foreground="Black" FontSize="50" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <StackPanel HorizontalAlignment="Left" Width="Auto">
+                <StackPanel HorizontalAlignment="Left" Width="1649" Margin="0 0 0 0" Height="621">
+                    <Label Style="{StaticResource heading}" Content="Report Page"   HorizontalContentAlignment="Center" FontWeight="Bold" FontFamily="Bell MT" FontStyle="Italic" FontSize="36" />
+                    <DataGrid Height="400" x:Name="datagrid" HorizontalAlignment="Left" ColumnWidth="*" BorderBrush="Gray" BorderThickness="5" 
+                               Width="1284" Margin="30" />
+                    <Button FontFamily="Copperplate Gothic Light" Height="Auto" Width="250"  TabIndex="4"  Style="{DynamicResource PrimaryButtonStyle}" VerticalAlignment="Top"  Margin="20,20,0,0" Click="Button_Click">
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" Background="Transparent" Height="35" >
+                            <Viewbox Margin="0 3" Height="22" >
+                                <Path Fill="red" VerticalAlignment="Center" HorizontalAlignment="Center" Data="M13,9H18.5L13,3.5V9M6,2H14L20,8V20A2,2 0 0,118,22H6C4.89,22 4,21.1 4,20V4C4,2.89 4.89,2 6,2M11,15V12H9V15H6V17H9V20H11V17H14V15H11Z" RenderTransformOrigin="0.69,0.69"/>
+                            </Viewbox>
+                            <Label Content="Create Challen" VerticalAlignment="Center"  HorizontalAlignment="Center" VerticalContentAlignment="Center"  HorizontalContentAlignment="Center" Margin="2 1" Padding="5" Foreground="White" FontSize="15" FontWeight="Bold"/>
+                        </StackPanel>
+                    </Button>
+
+
+
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
     </Border>
+
 </Page>
