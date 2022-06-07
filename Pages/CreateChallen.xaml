@@ -146,7 +146,7 @@
                     <Button Width="120" TabIndex="4" Click="Button_Click_1" >done</Button>
 
 
-                    <DataGrid Height="600" HorizontalAlignment="Left" Width="1500" Margin="30,31,30,30" x:Name="datagrid"></DataGrid>
+                    <DataGrid ColumnWidth="*" BorderBrush="Gray" BorderThickness="5"  Height="600" HorizontalAlignment="Left" Width="1500" Margin="30,31,30,30" x:Name="datagrid"></DataGrid>
                     <Grid HorizontalAlignment="Right" />
 
 

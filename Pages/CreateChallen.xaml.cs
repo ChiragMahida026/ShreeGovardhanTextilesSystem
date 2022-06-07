@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -33,44 +34,50 @@ namespace ShreeGovardhanTextilesSystem.Pages
 
         public CreateChallen()
         {
-            InitializeComponent();
-            loaddata();
-            settaka(); 
-            setser();
-            DateTime now = DateTime.Now;
+            try {
+                InitializeComponent();
+                con.Open();
+                loaddata();
+                settaka();
 
-            //initialize the variable for the rest of program
-            txtdaterec.Text = now.ToString("d");
-            dateused = txtdaterec.Text;
+                DateTime now = DateTime.Now;
 
-            SqlCommand cmd = new SqlCommand("select name from tbl_company", con);
+                //initialize the variable for the rest of program
+                txtdaterec.Text = now.ToString("d");
+                dateused = txtdaterec.Text;
 
-            con.Open();
-            SqlDataReader sdr = cmd.ExecuteReader();
+                SqlCommand cmd = new SqlCommand("select name from tbl_company", con);
 
-            List<string> numbersList = new List<string>();
+                
+                SqlDataReader sdr = cmd.ExecuteReader();
+                
+                List<string> numbersList = new List<string>();
 
-            while (sdr.Read())
-            {
-                numbersList.Add(Convert.ToString(sdr["name"]));
+                while (sdr.Read())
+                {
+                    numbersList.Add(Convert.ToString(sdr["name"]));
+                }
+                txtparty.ItemsSource = numbersList;
+                party = txtparty.Text;
+                
             }
-            txtparty.ItemsSource = numbersList;
-            party=txtparty.Text;
-            con.Close();
+            catch (SqlException err) {
+                
+                MessageBox.Show("Something gone wrong"); }
         }
 
             
             private void Button_Click(object sender, RoutedEventArgs e)
         {
-            setcount();
-            
-            //loaddata();
             createinsert();
             insertdate();
+            lstmtr.Clear();
+            lstser.Clear();
+            loaddata();
         }
 
-        
-       
+
+
 
         public void loaddata()
         {
@@ -81,7 +88,6 @@ namespace ShreeGovardhanTextilesSystem.Pages
             adap.Fill(ds, "purchases detail");
             datagrid.ItemsSource = ds.Tables[0].DefaultView;
 
-
             datagrid.ScrollIntoView(datagrid.Items.GetItemAt(datagrid.Items.Count - 1));
             datagrid.FontSize = 20;
 
@@ -90,19 +96,31 @@ namespace ShreeGovardhanTextilesSystem.Pages
 
         public void settaka()
         {
-             try
+            
+            try
             {
-                SqlCommand cmd = new SqlCommand("select chlno+1 as chlno from tbl_challen where id=(select max(id) from tbl_challen)", con);
+                SqlCommand cmd = new SqlCommand("select max(chlno)+1 as chlno from tbl_challen", con);
 
-                con.Open();
+              
                 if (cmd.ExecuteScalar() != null)
                 {
                     txtchlno.Text = cmd.ExecuteScalar().ToString();
                 }
                 else { txtchlno.Text = "1"; }
-                con.Close();
+                
+
+                SqlCommand cmd2 = new SqlCommand("select max(serial)+1 as chlno from tbl_challen", con);
+
+               if (cmd2.ExecuteScalar() != null)
+                {
+                    txttakano.Text = cmd2.ExecuteScalar().ToString();
+                }
+                else { txttakano.Text = "1"; }
+                
             }
-            catch (SqlException err) { txtchlno.Text = "1"; }
+            catch (SqlException err) { txttakano.Text = "1";
+                
+            }
             
 
 
@@ -110,72 +128,32 @@ namespace ShreeGovardhanTextilesSystem.Pages
 
         }
 
-        public void setser()
-        {
-            SqlCommand cmd2 = new SqlCommand("select MAX(serial)+1 as ser from tbl_production where serial IN (select serial from tbl_challen) ", con);
-            con.Open();
-            try
-            {
-                txttakano.Text = cmd2.ExecuteScalar().ToString();
-            }
-            catch (SqlException err) { }
-            con.Close();
-        }
 
-        public void setcount()
-        {
-            try
-            {
-                serial = txttakano.Text;
-                chlno = txtchlno.Text;
-                lot = float.Parse(txtlot.Text);
-                lot = lot * 12;
-
-                SqlCommand cmd = new SqlCommand("select sum(nmtr),count(nmtr) from tbl_production " +
-                    "where id >= (select id from tbl_production where serial = @serial) and " +
-                    "id<(select id from tbl_production where serial = @serial)+@lot", con);
-
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@serial", serial);
-                cmd.Parameters.AddWithValue("@lot", lot.ToString());
-
-                con.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                if (reader.Read())
-                {
-                    totmtr.Content = reader.GetDouble(0).ToString();
-                    tottaka.Content = reader.GetInt32(1).ToString();
-                }
-                else
-                {
-                    Console.WriteLine("No rows found.");
-                }
-                reader.Close();
-                con.Close();
-            }catch (Exception err) { }
-        }
 
 
         public void createinsert()
         {
+
+            lstmtr.Clear();
+            lstser.Clear();
             try
             {
+                lot = 0;
                 serial = txttakano.Text;
                 chlno = txtchlno.Text;
                 lot = float.Parse(txtlot.Text);
-                lot = lot * 12;
+                lot = (lot * 12)+int.Parse(serial);
 
-                SqlCommand cmd = new SqlCommand("select serial,nmtr,nweight from tbl_production " +
-                    "where id >= (select id from tbl_production where serial = @serial) and " +
-                    "id<(select id from tbl_production where serial = @serial)+@lot", con);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY id ASC)" +
+                    " AS rownumber, serial, nmtr, nweight FROM tbl_production ) AS foo " +
+                    "WHERE rownumber >= @serial and rownumber < @lot", con);
 
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@serial", serial);
                 cmd.Parameters.AddWithValue("@lot", lot.ToString());
 
 
-                con.Open();
+                
                 SqlDataReader sdr = cmd.ExecuteReader();
 
 
@@ -184,19 +162,27 @@ namespace ShreeGovardhanTextilesSystem.Pages
                     lstser.Add((string)sdr["serial"]);
                     lstmtr.Add((double)sdr["nmtr"]);
                 }
-             
-                con.Close();
+                sdr.Close();
+                
+                
+                totmtr.Content = lstmtr.Sum().ToString();
+                tottaka.Content = lstmtr.Count().ToString();
                 settaka();
-                setser();
+                
+                loaddata();
+
             }
-            catch(SqlException err) {MessageBox.Show("Fill all the detials correctly..."); }
+            catch(SqlException err) {
+                
+                MessageBox.Show("Fill all the detials correctly...");
+                
+            }
         }
 
         public void insertdate()
         {
             try { 
-            Console.WriteLine(lstmtr.Count);
-            for (int i = 0; i < Int32.Parse((string)tottaka.Content); i++)
+            for (int i = 0; i < lstmtr.Count(); i++)
             {
                 SqlCommand cmd = new SqlCommand("insert into tbl_challen (date,chlno,party,serial,meter) values (@date,@chlno,@party,@serial,@weight) ", con);
                 cmd.CommandType = CommandType.Text;
@@ -205,23 +191,30 @@ namespace ShreeGovardhanTextilesSystem.Pages
                 cmd.Parameters.AddWithValue("@party", txtparty.Text);
                 cmd.Parameters.AddWithValue("@serial", lstser[i].ToString());
                 cmd.Parameters.AddWithValue("@weight", lstmtr[i].ToString());
-                con.Open();
+                
                 cmd.ExecuteNonQuery();
-                con.Close();
+               
                     settaka();
-                    setser();
+                    
                 }
-
-        }catch(SqlException err) {MessageBox.Show("Fill all the detials correctly..."); }
+               
+            }
+            catch(SqlException err) {
+                
+                MessageBox.Show("Fill all the detials correctly..."); 
+            }
 }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            cmdbl = new SqlCommandBuilder(adap);
-            adap.Update(ds, "purchases detail");
-            MessageBox.Show("Information Updated", "Update");
-            loaddata();
-            settaka();
-            setser();
+            try
+            {
+                cmdbl = new SqlCommandBuilder(adap);
+                adap.Update(ds, "purchases detail");
+                MessageBox.Show("Information Updated", "Update");
+                loaddata();
+                settaka();
+            }
+            catch (SqlException err) { MessageBox.Show("Check Datagrid"); }
         }
     }
 
