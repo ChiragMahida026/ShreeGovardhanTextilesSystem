@@ -115,7 +115,7 @@
                             </StackPanel>
                         </Button>-->
 
-                        <Button FontFamily="Copperplate Gothic Light" Height="Auto" Click="Insert_data_Excel" TabIndex="4"  Style="{DynamicResource PrimaryButtonStyle}" VerticalAlignment="Top"  Margin="20,20,0,0">
+                        <Button FontFamily="Copperplate Gothic Light" Height="Auto" Click="Send_Data" TabIndex="4"  Style="{DynamicResource PrimaryButtonStyle}" VerticalAlignment="Top"  Margin="20,20,0,0">
                             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" Background="Transparent" Height="35" >
                                 <Viewbox Margin="0 3" Height="22" >
                                     <Path Fill="red" VerticalAlignment="Center" HorizontalAlignment="Center" Data="M13,9H18.5L13,3.5V9M6,2H14L20,8V20A2,2 0 0,118,22H6C4.89,22 4,21.1 4,20V4C4,2.89 4.89,2 6,2M11,15V12H9V15H6V17H9V20H11V17H14V15H11Z" RenderTransformOrigin="0.69,0.69"/>
@@ -124,7 +124,7 @@
                             </StackPanel>
                         </Button>
 
-                        <Button FontFamily="Copperplate Gothic Light" Height="Auto" Click="PdfDownload" TabIndex="4"  Style="{DynamicResource PrimaryButtonStyle}" VerticalAlignment="Top"  Margin="20,20,0,0">
+                        <Button FontFamily="Copperplate Gothic Light" Height="Auto" TabIndex="4"  Style="{DynamicResource PrimaryButtonStyle}" VerticalAlignment="Top"  Margin="20,20,0,0">
                             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" Background="Transparent" Height="35" >
                                 <Viewbox Margin="0 3" Height="22" >
                                     <Path Fill="red" VerticalAlignment="Center" HorizontalAlignment="Center" Data="M13,9H18.5L13,3.5V9M6,2H14L20,8V20A2,2 0 0,118,22H6C4.89,22 4,21.1 4,20V4C4,2.89 4.89,2 6,2M11,15V12H9V15H6V17H9V20H11V17H14V15H11Z" RenderTransformOrigin="0.69,0.69"/>

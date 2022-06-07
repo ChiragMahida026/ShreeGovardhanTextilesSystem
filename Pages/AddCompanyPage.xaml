@@ -113,7 +113,7 @@
 
                 </StackPanel>
                 <StackPanel  Width="1776" Margin="0 0 0 0">
-                    <DataGrid x:Name="datagrid" Height="600" HorizontalAlignment="Left" Width="1712" Margin="30,31,30,30"></DataGrid>
+                    <DataGrid ColumnWidth="*" BorderBrush="Gray" BorderThickness="5"  x:Name="datagrid" Height="600" HorizontalAlignment="Left" Width="1712" Margin="30,31,30,30"></DataGrid>
                     <Grid HorizontalAlignment="Right" />
 
 

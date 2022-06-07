@@ -34,22 +34,23 @@ namespace ShreeGovardhanTextilesSystem.Pages
         {
             InitializeComponent();
 
-        
+            con.Open();
             loaddata();
-          
+
+            
 
         }
 
         public void setser()
         {
             SqlCommand cmd2 = new SqlCommand("select max(serial)+1 from tbl_production", con);
-            con.Open();
+            ;
             try
             {
                 txtserial.Text = cmd2.ExecuteScalar().ToString();
             }
             catch (SqlException err) { }
-            con.Close();
+            ;
         }
 
         private void txtweight_TextChanged(object sender, TextChangedEventArgs e)
@@ -132,9 +133,9 @@ namespace ShreeGovardhanTextilesSystem.Pages
                 cmd.Parameters.AddWithValue("@nm", nm);
                 cmd.Parameters.AddWithValue("@nw", nw);
 
-                con.Open();
+                ;
                 cmd.ExecuteNonQuery();
-                con.Close();
+                ;
                 loaddata();
                 clearData();
                 setser();

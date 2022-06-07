@@ -84,14 +84,12 @@ namespace ShreeGovardhanTextilesSystem.Pages
 
             SqlCommand cmd3 = new SqlCommand("select SUM(weight) from tbl_purchases where qlty = '32/36' and date_used IS NULL", con);
             con.Open();
-            try
+            object c3 = cmd3.ExecuteScalar();
+            if (c3 != null)
             {
-                if (cmd3.ExecuteScalar() != null)
-                {
-                    tweight.Content = Convert.ToDecimal(cmd3.ExecuteScalar());
-                }
-            }
-            catch (SqlException err) { }
+
+                tweight.Content = cmd3.ExecuteScalar();
+            }  
             con.Close();
 
             SqlCommand cmd4 = new SqlCommand("select COUNT(*) from tbl_purchases where qlty = '40/24' and date_used IS NULL", con);
@@ -108,7 +106,7 @@ namespace ShreeGovardhanTextilesSystem.Pages
             {
                 if (cmd5.ExecuteScalar() != null)
                 {
-                    fweight.Content = Convert.ToDecimal(cmd5.ExecuteScalar());
+                    fweight.Content = cmd5.ExecuteScalar();
                 }
             }
             catch (SqlException err) {}

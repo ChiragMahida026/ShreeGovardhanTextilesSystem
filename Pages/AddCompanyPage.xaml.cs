@@ -81,6 +81,8 @@ namespace ShreeGovardhanTextilesSystem.Pages
             dt.Load(sdr);
             con.Close();
             datagrid.ItemsSource = dt.DefaultView;
+            datagrid.ScrollIntoView(datagrid.Items.GetItemAt(datagrid.Items.Count - 1));
+            datagrid.FontSize = 20;
         }
 
         }
