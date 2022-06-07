@@ -40,8 +40,8 @@ namespace ShreeGovardhanTextilesSystem.Pages
         public ReportPage()
         {
             InitializeComponent();
-            con.Open();
-            dd.ItemsSource = dataset;
+          //  con.Open();
+           // dd.ItemsSource = dataset;
         }
 
         private void cmbCountryList_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -59,7 +59,7 @@ namespace ShreeGovardhanTextilesSystem.Pages
                 SqlDataReader sdr = cmd.ExecuteReader();
                 dt.Load(sdr);
                 
-                datagrid.ItemsSource = dt.DefaultView;
+             //   datagrid.ItemsSource = dt.DefaultView;
             }
         }
 

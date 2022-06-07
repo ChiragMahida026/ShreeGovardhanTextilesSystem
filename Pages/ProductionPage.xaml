@@ -99,27 +99,46 @@
                         <TextBox x:Name="txtnw" TabIndex="253" IsReadOnly="True" />
 
                     </StackPanel>
-
-                    <Button Width="120" TabIndex="6" Click="Button_Click" >
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Width="Auto" Height="40" TabIndex="6" Click="Button_Click" Margin="0 0 30 0">
                         <StackPanel VerticalAlignment="Center" 
                     HorizontalAlignment="Center" Orientation="Horizontal" 
                     Background="Transparent" Height="35" >
                             
                             <Viewbox Margin="0 3" >
-                                <Path Fill="Blue" 
+                                <Path Fill="white" 
                       VerticalAlignment="Center" HorizontalAlignment="Center" 
                       Data="M16,10H14V7H10V10H8L12,14M19,15H15A3,3 0 0,1 12,18A3,3 0 0,1 9,15H5V5H19M19,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z"/>
                             </Viewbox>
                             <Label Content="Save" VerticalAlignment="Center" 
                    HorizontalAlignment="Center" VerticalContentAlignment="Center" 
                    HorizontalContentAlignment="Center" Margin="2 1" Padding="5" 
-                   Foreground="Blue" FontSize="15" FontWeight="Bold"/>
+                   Foreground="white" FontSize="15" FontWeight="Bold"/>
                         </StackPanel>
                     </Button>
 
+                        <Button Width="Auto"  Height="40" TabIndex="4" Click="Button_Click_1" Margin="0 0 30 0">
+                            <StackPanel VerticalAlignment="Center" 
+                    HorizontalAlignment="Center" Orientation="Horizontal" 
+                    Background="Transparent" Height="35" >
+
+                                <Viewbox Margin="0 3" >
+                                    <Path Fill="white" 
+                      VerticalAlignment="Center" HorizontalAlignment="Center" 
+                      Data="M21,10.12H14.22L16.96,7.3C14.23,4.6 9.81,4.5 7.08,7.2C4.35,9.91 4.35,14.28 7.08,17C9.81,19.7 14.23,19.7 16.96,17C18.32,15.65 19,14.08 19,12.1H21C21,14.08 20.12,16.65 18.36,18.39C14.85,21.87 9.15,21.87 5.64,18.39C2.14,14.92 2.11,9.28 5.62,5.81C9.13,2.34 14.76,2.34 18.27,5.81L21,3V10.12M12.5,8V12.25L16,14.33L15.28,15.54L11,13V8H12 5Z"/>
+                                </Viewbox>
+                                <Label Content="Done" VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" VerticalContentAlignment="Center" 
+                   HorizontalContentAlignment="Center" Margin="2 1" Padding="5" 
+                   Foreground="white" FontSize="15" FontWeight="Bold"/>
+                            </StackPanel>
+                        </Button>
+
+                    </StackPanel>
+
                 </StackPanel>
                 <StackPanel  Width="1776" Margin="0 0 0 0">
-                    <Button Width="120" TabIndex="4" Click="Button_Click_1" >done</Button>
+                   
 
                     <DataGrid ColumnWidth="*" BorderBrush="Gray" BorderThickness="5" Height="600" HorizontalAlignment="Left" Width="1712" Margin="30,31,30,30" x:Name="datagrid"></DataGrid>
                     <Grid HorizontalAlignment="Right" />

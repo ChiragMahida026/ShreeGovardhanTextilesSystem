@@ -63,7 +63,7 @@
             <StackPanel HorizontalAlignment="Left" Width="Auto">
                 <StackPanel HorizontalAlignment="Left" Width="1649" Margin="0 0 0 0" Height="621">
                     <Label Style="{StaticResource heading}" Content="Report Page"   HorizontalContentAlignment="Center" FontWeight="Bold" FontFamily="Bell MT" FontStyle="Italic" FontSize="36" />
-                    <DataGrid Height="400" x:Name="datagrid" HorizontalAlignment="Left" ColumnWidth="*" BorderBrush="Gray" BorderThickness="5" 
+                    <DataGrid Height="400" x:Name="datagrid" HorizontalAlignment="Center" ColumnWidth="*" BorderBrush="Gray" BorderThickness="5" 
                                Width="1284" Margin="30" />
                     <Button FontFamily="Copperplate Gothic Light" Height="Auto" Width="250"  TabIndex="4"  Style="{DynamicResource PrimaryButtonStyle}" VerticalAlignment="Top"  Margin="20,20,0,0" Click="Button_Click">
                         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" Background="Transparent" Height="35" >
